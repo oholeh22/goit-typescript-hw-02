@@ -6,7 +6,7 @@ import LoadMoreBtn from '../LoadMoreBtn/LoadMoreBtn';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import Loader from '../Loader/Loader';
 import ImageModal from '../ImageModal/Modal';
-import { Image } from './App.types'
+import { Image } from '../App/App.types';
 
 function App(): JSX.Element {
     const [images, setImages] = useState<Image[]>([]);
