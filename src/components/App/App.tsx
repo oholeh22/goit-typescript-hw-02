@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
-import SearchBar from './SearchBar/SearchBar';
-import ImageGallery from './ImageGallery/ImageGallery';
-import { getPhotos } from './ApiService/Photos';
-import LoadMoreBtn from './LoadMoreBtn/LoadMoreBtn';
-import ErrorMessage from './ErrorMessage/ErrorMessage';
-import Loader from './Loader/Loader';
-import ImageModal from './ImageModal/Modal';
+import SearchBar from '../SearchBar/SearchBar';
+import ImageGallery from '../ImageGallery/ImageGallery';
+import { getPhotos } from '../ApiService/Photos';
+import LoadMoreBtn from '../LoadMoreBtn/LoadMoreBtn';
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
+import Loader from '../Loader/Loader';
+import ImageModal from '../ImageModal/Modal';
 
 function App() {
     const [images, setImages] = useState([]);
