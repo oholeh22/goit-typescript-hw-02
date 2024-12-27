@@ -6,16 +6,17 @@ import LoadMoreBtn from '../LoadMoreBtn/LoadMoreBtn';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import Loader from '../Loader/Loader';
 import ImageModal from '../ImageModal/Modal';
+import { Photo } from './App.types'
 
-function App() {
-    const [images, setImages] = useState([]);
-    const [query, setQuery] = useState('');
-    const [page, setPage] = useState(1);
-    const [loading, setLoading] = useState(false);
-    const [hasMore, setHasMore] = useState(true);
-    const [error, setError] = useState(null);
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [modalImage, setModalImage] = useState(null);
+function App(): JSX.Element {
+    const [images, setImages] = useState<Photo[]>([]);
+    const [query, setQuery] = useState<string>('');
+    const [page, setPage] = useState<number>(1);
+    const [loading, setLoading] = useState<boolean>(false);
+    const [hasMore, setHasMore] = useState<boolean>(true);
+    const [error, setError] = useState<string | null>(null);
+    const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+    const [modalImage, setModalImage] = useState<Photo | null>(null);
 
     const fetchImages = async () => {
         setLoading(true);
@@ -47,7 +48,7 @@ function App() {
         }
     };
 
-    const openModal = (image) => {
+    const openModal = (image: Photo) => {
         setModalImage(image);
         setIsModalOpen(true);
     };
@@ -56,7 +57,7 @@ function App() {
         setIsModalOpen(false);
     };
 
-    const getNewQuery = (newQuery) => {
+    const getNewQuery = (newQuery: string) => {
         setQuery(newQuery);
         setImages([]);
         setPage(1);
@@ -78,7 +79,7 @@ function App() {
                     {!hasMore && !loading && <p>No more images to load</p>}
                 </>
             )}
-            {isModalOpen && <ImageModal image={modalImage} closeModal={closeModal} />}
+            {isModalOpen && modalImage && <ImageModal image={modalImage} closeModal={closeModal} />}
         </div>
     );
 }

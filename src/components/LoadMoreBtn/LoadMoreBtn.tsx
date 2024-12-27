@@ -1,9 +1,5 @@
 import css from './LoadMoreBtn.module.css';
-
-type LoadMoreBtnProps = {
-    loadMore: () => void;
-    hasImages: boolean;
-};
+import { LoadMoreBtnProps } from '../App/App.types';
 
 const LoadMoreBtn: React.FC<LoadMoreBtnProps> = ({ loadMore, hasImages }) => {
     return (

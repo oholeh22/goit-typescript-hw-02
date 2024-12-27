@@ -1,5 +1,6 @@
 import css from './ImageGallery.module.css';
 import ImageCard from '../ImageCard/ImageCard'; 
+import { ImageGalleryProps } from '../App/App.types';
 
 type Image = {
   id: string;
@@ -12,11 +13,6 @@ type Image = {
     name: string;
   };
   likes: number;
-};
-
-type ImageGalleryProps = {
-  images: Image[];
-  openModal: (image: Omit<Image, 'id'>) => void;
 };
 
 const ImageGallery: React.FC<ImageGalleryProps> = ({ images, openModal }) => {

@@ -1,10 +1,7 @@
 import css from './SearchBar.module.css';
 import toast, { Toaster } from 'react-hot-toast';
 import { useState, FormEvent, ChangeEvent } from 'react';
-
-type SearchBarProps = {
-    setQuery: (query: string) => void;
-};
+import { SearchBarProps } from '../App/App.types';
 
 const notify = (message: string): void => {
     toast(message, {
