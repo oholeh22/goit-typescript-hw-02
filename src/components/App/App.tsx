@@ -6,10 +6,10 @@ import LoadMoreBtn from '../LoadMoreBtn/LoadMoreBtn';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import Loader from '../Loader/Loader';
 import ImageModal from '../ImageModal/Modal';
-import { Photo } from './App.types'
+import { Image } from './App.types'
 
 function App(): JSX.Element {
-    const [images, setImages] = useState<Photo[]>([]);
+    const [images, setImages] = useState<Image[]>([]);
     const [query, setQuery] = useState<string>('');
     const [page, setPage] = useState<number>(1);
     const [loading, setLoading] = useState<boolean>(false);

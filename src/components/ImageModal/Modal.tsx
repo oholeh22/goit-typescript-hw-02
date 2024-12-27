@@ -3,17 +3,6 @@ import { FaTimes } from 'react-icons/fa';
 import css from './Modal.module.css';
 import { ImageModalProps } from '../App/App.types';
 
-type Image = {
-  alt_description: string;
-  urls: {
-    full: string;
-  };
-  user: {
-    name: string;
-  };
-  likes: number;
-};
-
 const ImageModal: React.FC<ImageModalProps> = ({ image, closeModal }) => {
   const { alt_description, urls, user, likes } = image;
 

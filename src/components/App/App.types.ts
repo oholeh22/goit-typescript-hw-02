@@ -1,4 +1,4 @@
-export type Photo = {
+export type Image = {
     id: string;
     urls: {
       regular: string;
@@ -23,8 +23,8 @@ export type Photo = {
 
   export type ImageGalleryProps = {
     images: Photo[];
-    openModal: (image: Photo) => void;
-  };
+    openModal: (image: Omit<Photo, 'id'>) => void;
+};
   
   export type ImageModalProps = {
     image: Photo;
