@@ -48,7 +48,7 @@ function App(): JSX.Element {
         }
     };
 
-    const openModal = (image: Photo) => {
+    const openModal = (image: Image) => {
         setModalImage(image);
         setIsModalOpen(true);
     };

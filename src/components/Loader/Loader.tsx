@@ -7,7 +7,7 @@ const Loader: React.FC = () => {
                 visible={true}
                 height="80"
                 width="80"
-                colors={['#4fa94d']} 
+                colors={['#4fa94d', '#4fa94d', '#4fa94d']} 
                 ariaLabel="rotating-triangles-loading"
             />
         </div>
