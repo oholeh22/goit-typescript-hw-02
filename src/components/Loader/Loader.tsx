@@ -1,6 +1,6 @@
 import { RotatingTriangles } from 'react-loader-spinner';
 
-const Loader = () => {
+const Loader: React.FC = () => {
   return (
     <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
       <RotatingTriangles

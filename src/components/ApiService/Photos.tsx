@@ -8,18 +8,37 @@ axios.defaults.params = {
     per_page: 15,
 };
 
-export const getPhotos = async (query, page = 1) => {
+type Photo = {
+  id: string;
+  urls: {
+    regular: string;
+    full: string;
+  };
+  alt_description: string;
+  user: {
+    name: string;
+  };
+  likes: number;
+};
+
+type GetPhotosResponse = {
+  results: Photo[];
+  total: number;
+  total_pages: number;
+};
+
+export const getPhotos = async (query: string, page: number = 1): Promise<GetPhotosResponse> => {
     try {
-        const { data } = await axios.get('search/photos', {
+        const { data } = await axios.get<GetPhotosResponse>('search/photos', {
             params: {
                 query,
                 page,
             },
         });
 
-        return data; 
+        return data;
     } catch (error) {
         console.error('Error fetching photos:', error);
-        throw error; 
+        throw error;
     }
 };
