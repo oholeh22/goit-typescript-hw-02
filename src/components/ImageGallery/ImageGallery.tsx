@@ -9,11 +9,11 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images, openModal }) => {
                 <li 
                     key={id} 
                     className={css.galleryItem} 
-                    onClick={() => openModal({ alt_description, urls, user, likes })}
+                    onClick={() => openModal({ id, alt_description, urls, user, likes })}
                 >
                     <ImageCard 
                         src={urls.regular} 
-                        alt={alt_description} 
+                        alt={alt_description || ''} 
                         avgColor={urls.regular}
                     />
                 </li>

@@ -23,7 +23,7 @@ export type SearchBarProps = {
 
 export type ImageGalleryProps = {
     images: Image[];
-    openModal: (image: Omit<Image, 'id'>) => void;
+    openModal: (image: Image) => void;
 };
 
 export type ImageModalProps = {

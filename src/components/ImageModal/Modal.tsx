@@ -17,7 +17,7 @@ const ImageModal: React.FC<ImageModalProps> = ({ image, closeModal }) => {
       <button className={css.closeBtn} onClick={closeModal}>
         <FaTimes />
       </button>
-      <img src={urls.full} alt={alt_description} className={css.modalImage} />
+      <img src={urls.full} alt={alt_description || undefined} className={css.modalImage} />
       <div className={css.imageInfo}>
         <h2>{alt_description}</h2>
         <p>By: {user.name}</p>

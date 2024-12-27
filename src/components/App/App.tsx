@@ -16,7 +16,7 @@ function App(): JSX.Element {
     const [hasMore, setHasMore] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-    const [modalImage, setModalImage] = useState<Photo | null>(null);
+    const [modalImage, setModalImage] = useState<Image | null>(null);
 
     const fetchImages = async () => {
         setLoading(true);
